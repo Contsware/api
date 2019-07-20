@@ -82,7 +82,7 @@ class RegisterController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'error' => $validator->messages()]);
+            return response()->json(['success' => false, 'error' => $validator->messages()], 400);
         }
 
         $user = new User();
@@ -91,7 +91,7 @@ class RegisterController extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return response()->json($user);
+        return response()->json($user, 200);
     }
 
 }
