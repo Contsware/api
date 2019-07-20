@@ -39,11 +39,4 @@ class User extends Authenticatable
     public function contacts(){
         $this->hasMany('App\Contact');
     }
-    
-    public function activities(){
-        return $this->hasMany('App\Activity');
-    }
-    public function accounts(){
-        return $this->hasMany('App\Account');
-    }
 }

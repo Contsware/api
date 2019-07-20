@@ -22,10 +22,8 @@ class CreateContactsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('address');
-            $table->string('date');
-
             $table->biginteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     public function contact(){
-        return $this->hasMany('App\Contact');
+        return $this->belongsTo('App\Contact');
     }
-    public function status(){
-        return $this->belongsTo('App\ActivityStatus');
+    public function activities(){
+        return $this->hasMany('App\Account');
     }
-    public function user(){
-        return $this->belongsTo('App\User');
-    }
+
 }

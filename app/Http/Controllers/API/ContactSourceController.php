@@ -15,7 +15,7 @@ class ContactSourceController extends Controller
      */
     public function index()
     {
-        //
+        return ContactSource::all();
     }
 
     /**
@@ -51,7 +51,12 @@ class ContactSourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        ContactSource::where('id',$id)->
+        update(
+            [
+                name => $request->name
+            ]
+            );
     }
 
     /**
@@ -62,6 +67,6 @@ class ContactSourceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ContactSource::destroy($id);
     }
 }

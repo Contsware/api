@@ -13,6 +13,7 @@ class UpdateContactsTable extends Migration
      */
     public function up()
     {
+        /*
         Schema::table('contacts', function (Blueprint $table) {
             $table->biginteger('source_id')->unsigned();
             $table->foreign('source_id')->references('id')->on('contact_sources');
@@ -23,6 +24,7 @@ class UpdateContactsTable extends Migration
             $table->biginteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('contact_statuses');
         });
+        */
     }
 
     /**

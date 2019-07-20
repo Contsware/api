@@ -12,23 +12,15 @@ class Contact extends Model
         'last_name',
         'email',
         'phone',
-        'address',
-        'date'
+        'address'
     ];
 
-    public function source(){
-        return $this->hasMany('App\ContactSource');
-    }
-    public function status(){
-        return $this->belongsTo('App\ContactStatus');
-    }
-    public function account(){
-        return $this->belongsTo('App\Account');
+
+    public function activities(){
+        return $this->hasMany('App\Activity');
     }
     public function user(){
         return $this->belongsTo('App\User');
     }
-    public function activities(){
-        return $this->belongsTo('App\Contact');
-}
+
 }
