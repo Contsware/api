@@ -47,7 +47,7 @@ class LoginController extends Controller
         $password = $request->get('password');
         $email = $request->get('email');
         //$this->attemptLogin($request)
-        $userData = User::where('email',$email)->first();
+        $userData = User::where('email',$email)->where('password',$password)->first();
         if ($userData) {
             //$user = Auth::user();
             //$success['token'] = $user->createToken('MyApp')->accessToken;
