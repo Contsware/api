@@ -82,7 +82,7 @@ class RegisterController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'error' => $validator->messages()], 200);
+            return response()->json(['success' => false, 'error' => $validator->messages()], 200)->header('Access-Control-Allow-Origin', '*')->header('Access-Control-Allow-Headers', 'Content-type, X-Auth-Token, Authorization, Origin');
         }
 
         $user = new User();
@@ -91,7 +91,7 @@ class RegisterController extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return response()->json($user, 200);
+        return response()->json($user, 200)->header('Access-Control-Allow-Origin', '*')->header('Access-Control-Allow-Headers', 'Content-type, X-Auth-Token, Authorization, Origin');
     }
 
 }
