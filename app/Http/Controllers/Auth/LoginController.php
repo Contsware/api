@@ -51,6 +51,6 @@ class LoginController extends Controller
             return response()->json($success, 200);
         }
 
-        return response()->json($this->validateLogin($request));
+        return response()->json($request);
     }
 }
