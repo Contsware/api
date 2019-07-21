@@ -55,6 +55,6 @@ class LoginController extends Controller
             return response()->json($userData, 200);
         }
 
-        return response()->json($userData);
+        return response()->json("error");
     }
 }
