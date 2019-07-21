@@ -51,6 +51,6 @@ class LoginController extends Controller
             return response()->json($success, 200);
         }
 
-        return response()->json('error');
+        return response()->json($this->attemptLogin($request));
     }
 }
