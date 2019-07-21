@@ -47,13 +47,14 @@ class LoginController extends Controller
         $password = $request->get('password');
         $email = $request->get('email');
         //$this->attemptLogin($request)
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            $user = Auth::user();
+        $userData = User::where('email',$email)->first();
+        if ($userData) {
+            //$user = Auth::user();
             //$success['token'] = $user->createToken('MyApp')->accessToken;
             //$success['user'] = $user;
-            return response()->json($user, 200);
+            return response()->json($userData, 200);
         }
 
-        return response()->json($request);
+        return response()->json($userData);
     }
 }
